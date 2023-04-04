@@ -17,11 +17,7 @@ function solution(t, p) {
                 console.log('hi')
             }
             cnt += 1
-            
         }
-
     }
-    
-    
     return answer = result;
 }
