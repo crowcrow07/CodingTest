@@ -8,9 +8,7 @@ const input = require("fs")
   .trim()
   .split("\n");
 
-N = input.map(Number);
-N = N.join("");
-
+N = parseInt(input[0])
 
 function leapYear(year) {
     if(year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
@@ -20,6 +18,5 @@ function leapYear(year) {
         return 0
     }
 }
-
 
 console.log(leapYear(N))
