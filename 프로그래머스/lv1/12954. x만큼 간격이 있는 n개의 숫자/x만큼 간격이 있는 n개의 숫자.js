@@ -1,11 +1,1 @@
-function solution(x, n) {
-    let answer = [];
-    let cnt = 0
-    
-    while(cnt < n) {
-        cnt++
-        answer.push(x * cnt)
-    }
-    
-    return answer;
-}
+function solution(x, n) {let answer = [];for(let i = 1; i <= n; i++) {answer.push(i * x)}return answer;}
