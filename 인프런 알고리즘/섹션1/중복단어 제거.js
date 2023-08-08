@@ -17,3 +17,5 @@ console.log(solution(str));
 // answer = s.filter((v, i) => {
 //     return s.indexOf(v) === i;
 // });
+
+// indexof 메서드는 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고 존재하지 않으면 -1을 반환합니다.
