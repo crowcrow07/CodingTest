@@ -7,34 +7,25 @@
 function solution(arr) {
   let answer = 0;
   let n = arr.length;
-  let dx = [-1, 0, 1, 0];
-  let dy = [0, 1, 0, -1];
+  let nx = [-1, 0, 1, 0];
+  let ny = [0, -1, 0, 1];
 
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
-      let flag = 1;
-      for (let k in dx) {
-        let nx = i + dx[k];
-        let ny = j + dy[k];
-
-        if (
-          nx >= 0 &&
-          nx < n &&
-          ny >= 0 &&
-          ny < n &&
-          arr[nx][ny] >= arr[i][j]
-        ) {
-          flag = 0;
+      let cnt = 0;
+      for (let k = 0; k < 4; k++) {
+        let x = i + nx[k];
+        let y = j + ny[k];
+        if (x >= 0 && y >= 0 && n > x && n > y && arr[x][y] >= arr[i][j]) {
+          cnt++;
           break;
         }
       }
-      if (flag) {
+      if (cnt === 0) {
         answer++;
       }
     }
   }
-
-  // X축 하나 뺀거랑 X축 하나 더한거랑 Y축 하나뺀거랑 Y축 하나 더한거를 비교하면 된다?
 
   return answer;
 }
