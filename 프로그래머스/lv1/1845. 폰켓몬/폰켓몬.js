@@ -12,7 +12,6 @@ function solution(nums) {
             nH.set(i, 1)
         }
     }
-    console.log(nH.size, select)
     
     if(nH.size <= select) {
         answer = nH.size
