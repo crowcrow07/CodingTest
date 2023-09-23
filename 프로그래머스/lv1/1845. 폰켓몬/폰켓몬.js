@@ -1,20 +1,24 @@
 function solution(nums) {
     let answer = 0;
-    let choose = nums.length / 2
-    let mon = []
+    let select = nums.length / 2
+    
+    let nH = new Map()
     
     for(let i of nums) {
-        if(mon.includes(i) === false) {
-            mon.push(i)
+        if(nH.has(i)) {
+            nH.set(i, nH.get(i) + 1)
+        }
+        else {
+            nH.set(i, 1)
         }
     }
-    console.log(mon, choose)
+    console.log(nH.size, select)
     
-    if(mon.length > choose) {
-        answer = choose
+    if(nH.size <= select) {
+        answer = nH.size
     }
     else {
-        answer = mon.length
+        answer = select
     }
     
     return answer;
