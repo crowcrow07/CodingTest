@@ -7,6 +7,7 @@ function solution(numbers, target) {
             if(sum === target) {
                 answer++
             }
+            return;
         }
         else {
             DFS(L + 1, sum + numbers[L])
