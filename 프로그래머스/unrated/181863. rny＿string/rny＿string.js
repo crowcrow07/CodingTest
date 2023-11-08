@@ -1,13 +1,3 @@
 function solution(rny_string) {
-    let answer = '';
-    let arr = rny_string.split('')
-    
-    for(let i = 0; i < arr.length; i++) {
-        if(arr[i] === 'm') {
-           arr[i] = 'rn'
-        }
-    }
-    
-    
-    return answer = arr.join('')
+    return rny_string.replaceAll(/m/g, "rn");
 }
