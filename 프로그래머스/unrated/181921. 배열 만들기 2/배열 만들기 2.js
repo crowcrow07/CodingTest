@@ -1,10 +1,6 @@
 function solution(l, r) {
     let answer = [];
     
-    if(l < 5) {
-        return [-1]
-    }
-    
     function DFS(cnt) {  
         if(r < +cnt) {
             return;
