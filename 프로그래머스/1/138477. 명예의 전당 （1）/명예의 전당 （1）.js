@@ -3,9 +3,7 @@ function solution(k, score) {
     let glory = []
         
     for(let i = 0; i < k; i++) {
-        if(score[i] !== undefined){
-            glory.push(score[i])
-        }
+        glory.push(score[i])
         glory.sort((a , b) => a - b)
         if(answer.length < score.length) {
             answer.push(glory[0])
