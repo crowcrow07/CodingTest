@@ -1,5 +1,4 @@
 function solution(cards1, cards2, goal) {
-    let answer = '';
     
     for(let i of goal) {
         if(cards1[0] === i) {
@@ -12,6 +11,5 @@ function solution(cards1, cards2, goal) {
             return 'No'
         }
     }
-    
-    return answer = 'Yes';
+    return 'Yes';
 }
