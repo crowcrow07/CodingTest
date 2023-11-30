@@ -1,12 +1,11 @@
 function solution(babbling) {
     let answer = 0;
-    let duplicationArr = ['ayaaya','yeye', 'woowoo', 'mama']
     let possibleArr = ['aya', 'ye', 'woo', 'ma']
     
     // 연속해서 같은 발음 하는 언어 제거
-    duplicationArr.forEach((v) => {
+    possibleArr.forEach((v) => {
         for(let i = 0; i < babbling.length; i++) {
-            if(babbling[i].includes(v)) {
+            if(babbling[i].includes(v.repeat(2))) {
                 babbling.splice(i, 1)
                 i--
             }
