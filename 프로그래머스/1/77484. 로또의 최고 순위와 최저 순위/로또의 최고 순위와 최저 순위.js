@@ -1,6 +1,5 @@
 function solution(lottos, win_nums) {
     let answer = [];
-    let fullLottoArr = Array.from({length:45}, (_, i) => i++ + 1)
     
     // 최저 순위
     answer.push(lottoGrade(lottos, win_nums))
