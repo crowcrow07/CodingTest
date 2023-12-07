@@ -6,12 +6,12 @@ class MinHeap {
     push(val) {
         this.heap.push(val);
         let currentIndex = this.heap.length - 1;
-        let parentIndex = Math.floor(currentIndex / 2);
+        let parentIndex = (currentIndex / 2) >> 0
         
         while (parentIndex !== 0 && this.heap[currentIndex] < this.heap[parentIndex]) {
             this._swap(currentIndex, parentIndex);
             currentIndex = parentIndex;
-            parentIndex = Math.floor(currentIndex / 2);
+            parentIndex = (currentIndex / 2) >> 0
         }
     }
     
@@ -21,6 +21,7 @@ class MinHeap {
         if (!isTopPop) {
             const parentIndex = Math.floor((this.heap.length - 1) / 2);
             const lastLeaf = this.heap.slice(parentIndex);
+            console.log(lastLeaf)
             const max = Math.max(...lastLeaf);
             this._swap(parentIndex + lastLeaf.indexOf(max), this.heap.length - 1);
             return this.heap.pop();
