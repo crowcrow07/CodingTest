@@ -9,7 +9,6 @@ function solution(info, edges) {
     function DFS(node, animals, visit) {
         info[node] === 0 ? animals[0]++ : animals[1]++
         if(animals[0] <= animals[1]) return;
-        
         visit.push(...graph[node])
         visit.forEach((val, idx, arr) => {
             const rest = arr.filter((_, i) => idx !== i)
