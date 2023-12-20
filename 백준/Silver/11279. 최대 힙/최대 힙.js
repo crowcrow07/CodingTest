@@ -16,7 +16,7 @@ class MaxHeap {
   }
 
   getMax() {
-    return this.heap[1] ?? null;
+    return this.heap[1];
   }
 
   swap(a, b) {
@@ -46,37 +46,41 @@ class MaxHeap {
 
     if (!this.heap[leftIdx]) return max;
     if (!this.heap[rightIdx]) {
-      if (this.heap[curIdx] < this.heap[leftIdx]) {
-        this.swap(curIdx, leftIdx);
+      if (this.heap[leftIdx] > this.heap[curIdx]) {
+        this.swap(leftIdx, curIdx);
       }
       return max;
     }
-    
+
     while (
       this.heap[curIdx] < this.heap[leftIdx] ||
       this.heap[curIdx] < this.heap[rightIdx]
     ) {
-      let maxIdx =
+      const maxIdx =
         this.heap[leftIdx] < this.heap[rightIdx] ? rightIdx : leftIdx;
-      this.swap(maxIdx, curIdx);
+      this.swap(curIdx, maxIdx);
       curIdx = maxIdx;
       leftIdx = curIdx * 2;
       rightIdx = curIdx * 2 + 1;
     }
+
     return max;
   }
 }
 
-function solve(arr) {
-  let answer = [];
+function Solve(n, arr) {
   const maxheap = new MaxHeap();
-  arr.forEach((num) => {
-    if (num !== 0) maxheap.heappush(num);
-    else {
-      maxheap.size() ? answer.push(maxheap.heappop()) : answer.push(0);
+  const answer = [];
+
+  arr.forEach((v) => {
+    if (v !== 0) {
+      maxheap.heappush(v);
+    } else {
+      answer.push(maxheap.heappop() ?? 0);
     }
   });
-  return answer.join("\n");
+
+  console.log(answer.join("\n"));
 }
 
-console.log(solve(arr));
+Solve(n, arr);
